@@ -55,47 +55,45 @@ public class MainActivity extends AppCompatActivity {
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!terms.isChecked())
-                {
-                    toast = Toast.makeText(MainActivity.this, "You must accept the terms", Toast.LENGTH_LONG);
+                if(name.getText().toString().length() == 0){
+                    name.setHint("Name is require!");
+                    name.setHintTextColor(Color.RED);
+                }
+                if(mssv.getText().toString().length() == 0){
+                    mssv.setHint("MSSV is require!");
+                    mssv.setHintTextColor(Color.RED);
+                }
+                if(cccd.getText().toString().length() == 0){
+                    cccd.setHint("CCCD is require!");
+                    cccd.setHintTextColor(Color.RED);
+                }
+                if(phone.getText().toString().length() == 0){
+                    phone.setHint("Phone is require!");
+                    phone.setHintTextColor(Color.RED);
+                }
+                if(email.getText().toString().length() == 0){
+                    email.setHint("Email is require!");
+                    email.setHintTextColor(Color.RED);
+                }
+                if (!it1.isChecked() && !it2.isChecked()){
+                    toast = Toast.makeText(MainActivity.this,"You must choose the major", Toast.LENGTH_LONG);
                     toast.show();
                 }
-                else
-                {
-                    if(name.getText().toString().length() == 0){
-                        name.setHint("Name is require!");
-                        name.setHintTextColor(Color.RED);
-                    }
-                    if(mssv.getText().toString().length() == 0){
-                        mssv.setHint("MSSV is require!");
-                        mssv.setHintTextColor(Color.RED);
-                    }
-                    if(cccd.getText().toString().length() == 0){
-                        cccd.setHint("CCCD is require!");
-                        cccd.setHintTextColor(Color.RED);
-                    }
-                    if(phone.getText().toString().length() == 0){
-                        phone.setHint("Phone is require!");
-                        phone.setHintTextColor(Color.RED);
-                    }
-                    if(email.getText().toString().length() == 0){
-                        email.setHint("Email is require!");
-                        email.setHintTextColor(Color.RED);
-                    }
-                    if (!it1.isChecked() && !it2.isChecked()){
-                        toast = Toast.makeText(MainActivity.this,"You must choose the major", Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-                    if(!java.isChecked() && !c.isChecked() && !python.isChecked() && !javascript.isChecked()){
-                        toast = Toast.makeText(MainActivity.this,"You must select at least the language", Toast.LENGTH_LONG);
-                        toast.show();
-                    }
+                if(!java.isChecked() && !c.isChecked() && !python.isChecked() && !javascript.isChecked()){
+                    toast = Toast.makeText(MainActivity.this,"You must select at least the language", Toast.LENGTH_LONG);
+                    toast.show();
+                }
 
-                    if (name.getText().toString().length() != 0 && mssv.getText().toString().length() != 0 &&
-                    cccd.getText().toString().length() != 0 && phone.getText().toString().length() != 0 && email.getText().toString().length() != 0){
-                        toast = Toast.makeText(MainActivity.this,"Submitted successfully", Toast.LENGTH_LONG);
-                        toast.show();
-                    }
+                if(!terms.isChecked()){
+                    toast = Toast.makeText(MainActivity.this,"You must accept the terms", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
+                if (name.getText().toString().length() != 0 && mssv.getText().toString().length() != 0 &&
+                        cccd.getText().toString().length() != 0 && phone.getText().toString().length() != 0 && email.getText().toString().length() != 0
+                && terms.isChecked()){
+                    toast = Toast.makeText(MainActivity.this,"Submitted successfully", Toast.LENGTH_LONG);
+                    toast.show();
                 }
             }
         });
