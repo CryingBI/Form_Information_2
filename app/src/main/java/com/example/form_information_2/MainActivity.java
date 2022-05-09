@@ -108,5 +108,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                birthday.setVisibility(birthday.VISIBLE);
+            }
+        });
+
     }
 }
